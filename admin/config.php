@@ -1,8 +1,8 @@
 <?php
 
 $db_config = array(
-    "db_name" => "",
-    "user" => "",
+    "db_name" => "CV",
+    "user" => "root",
     "password" => ""
 );
 

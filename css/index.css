@@ -2,4 +2,111 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    font-family: 'Staatliches', cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.tumami {
+    height: 100vh;
+    width: 100%;
+
+    background-color: #22262A;
+}
+
+.wrap {
+    position: absolute;
+}
+
+footer {
+    height: 6rem;
+    width: 100vw;
+
+    border-top: 1px solid #343a41;
+    background-color: #171A1D;
+}
+
+.left-nav {
+    height: 100vh;
+
+    margin-left: -4.5rem;
+    position: fixed;
+    display: flex;
+    align-items: center;
+}
+
+.left-nav li a {
+    width: 8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 1rem;
+
+    color: white;
+
+    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.left-nav li a span {
+    font-size: 1.1rem;
+
+    text-align: right;
+} 
+
+.left-nav li a i {
+    font-size: 1.6rem;
+
+    margin-left: 1rem;
+} 
+
+.left-nav li:hover > a {
+    transform: translateX(45%);
+}
+
+.left-nav__github {
+    background-color: #333333;
+}
+
+.left-nav__email {
+    background-color: #6FC2B0;
+}
+
+.left-nav__cv {
+    background-color: #0077B5;
+}
+
+.left-nav li .left-nav__cv i {
+    margin-right: .3rem;
+}
+
+.hola {
+    width: 200px;
+    height: 100px;
+
+    margin-left: -40px;
+
+    background-color: blue;
+
+    transition: transform .45s cubic-bezier(.175,.885,.32,1.275);
+}
+
+.left-nav:hover .hola {
+    transform: translateX(100%);
+    background-color: blanchedalmond;
+}
+
+@media only screen and (min-width: 2400px)
+{
+    html {
+        
+    }
 }
