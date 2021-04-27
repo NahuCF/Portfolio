@@ -1,13 +1,18 @@
-var body = document.getElementsByTagName("html")[0];
+var inlineWordContainer = document.querySelectorAll(".inline-word-container");
+var inlineWordChildren = document.querySelectorAll(".inline-word > div");
 
-// window.addEventListener("resize", function()
-// { 
-//     if(window.screen.width > 1000)
-//     {
-//         body.style.fontSize = "80px";
-//     }
-//     else 
-//     {
-//         body.style.fontSize = "4px";
-//     }
-// });
+inlineWordContainer.forEach(function(container)
+{
+    container.addEventListener("mouse   enter", function()
+    {
+        container.classList.add("inline-word-container--active");;
+
+        inlineWordChildren.forEach(function(children)
+        {
+            setTimeout(function()
+            {
+                container.classList.remove("inline-word-container--active");
+            }, 2000);
+        });
+    });
+});
