@@ -234,13 +234,13 @@ footer * {
     cursor: pointer;
 }
 
-.hamburger-button-container:hover .hamburger-button:not(.hamburguer-button--active) .hamburger-button__line::before {
+.hamburger-button-container:hover .hamburger-button:not(.hamburger-button--active) .hamburger-button__line::before {
     transition: transform .2s;
     transform: translateY(-1.2rem);
     
 }
 
-.hamburger-button-container:hover .hamburger-button:not(.hamburguer-button--active) .hamburger-button__line::after {
+.hamburger-button-container:hover .hamburger-button:not(.hamburger-button--active) .hamburger-button__line::after {
     transition: transform .2s;
     transform: translateY(1.2rem);
 }
@@ -284,27 +284,27 @@ footer * {
     transform: translateY(.8rem);
 }
 
-.hamburguer-button--active .hamburger-button__line {
+.hamburger-button--active .hamburger-button__line {
     transform: translateX(-3rem);
     background-color: transparent;
 }
 
-.hamburguer-button--active .hamburger-button__line::before {
+.hamburger-button--active .hamburger-button__line::before {
     transform: rotate(45deg) translate(2rem, -2rem);
     background-color: white;
 }
 
-.hamburguer-button--active .hamburger-button__line::after {
+.hamburger-button--active .hamburger-button__line::after {
     transform: rotate(-45deg) translate(2rem, 2rem);
     background-color: white;
 }
 
-/* .hamburger-button-container:hover .hamburguer-button--active .hamburger-button__line::before {
+/* .hamburger-button-container:hover .hamburger-button--active .hamburger-button__line::before {
     transition: all .1s;
     transform: rotate(45deg) translate(2rem, -2rem) scale(1.3, 1.6);
 }
 
-.hamburger-button-container:hover .hamburguer-button--active .hamburger-button__line::after {
+.hamburger-button-container:hover .hamburger-button--active .hamburger-button__line::after {
     transition: all .1s;
     transform: rotate(-45deg) translate(2rem, 2rem) scale(1.3, 1.6);
 } */

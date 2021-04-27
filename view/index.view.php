@@ -189,5 +189,5 @@
     </div>
 </body>
     <?php echo '<script type="text/javascript" src="js/index.js"></script>'; ?>
-    <?php echo '<script type="text/javascript" src="js/hamburguer.js"></script>'; ?>
+    <?php echo '<script type="text/javascript" src="js/hamburger.js"></script>'; ?>
 </html>
