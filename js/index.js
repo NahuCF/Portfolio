@@ -3,7 +3,7 @@ var inlineWordChildren = document.querySelectorAll(".inline-word > div");
 
 inlineWordContainer.forEach(function(container)
 {
-    container.addEventListener("mouse   enter", function()
+    container.addEventListener("mouseenter", function()
     {
         container.classList.add("inline-word-container--active");;
 

@@ -175,9 +175,19 @@
         </ul>
     </div>
 
-    <button class="hamburger-button">
-        <span>a</span>
-    </button>
+    <div class="hamburger-button-container">
+        <div class="hamburger-button">
+            <div class="hamburger-button__line"></div>
+        </div>
+    </div>
+
+    <div class="middle-nav-container">
+        <div class="middle-nav">
+            <a href="./">Inicio</a>
+            <a href="#">Proyectos</a>
+        </div>
+    </div>
 </body>
     <?php echo '<script type="text/javascript" src="js/index.js"></script>'; ?>
+    <?php echo '<script type="text/javascript" src="js/hamburguer.js"></script>'; ?>
 </html>
