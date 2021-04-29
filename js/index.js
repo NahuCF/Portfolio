@@ -1,5 +1,5 @@
-var inlineWordContainer = document.querySelectorAll(".inline-word-container");
-var inlineWordChildren = document.querySelectorAll(".inline-word > div");
+var inlineWordContainer = document.querySelectorAll(".inline-word-container"),
+    inlineWordChildren = document.querySelectorAll(".inline-word > div");
 
 inlineWordContainer.forEach(function(container)
 {

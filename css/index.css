@@ -6,11 +6,11 @@
     font-family: 'Staatliches', cursive;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar, p::-webkit-scrollbar {
     width: .4em;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, p::-webkit-scrollbar-track {
     background-color: #171A1D;
 }
 
@@ -31,24 +31,78 @@ button {
     outline: none;
 }
 
+img {
+    display: block;
+}
+
 .wrap {
     width: 100%;
     
     position: absolute;
 }
 
-#main-container {
-    height: 100vh;
+.main-about {
+    animation: rotatemain .6s ease-out forwards;
+    transform-origin: bottom;
+}
+
+@keyframes rotatemain {
+    0% {
+        opacity: 0;
+        transform: rotate(10deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.4rem;
+    font-size: 4rem;
+
+    z-index: 3;
+
+    transition: transform .3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.logo--blue {
+    color: #3f3fb3;
+}
+
+.logo-f-container {
+    position: relative;
+}
+
+.logo--white {
+    color: white;
+    position: absolute;
+    top: 10px;
+}
+
+#main-container, #main-container-projects {
+    min-height: 100vh;
     width: 100%;
 
     display: flex;
     justify-content: center;
-    align-items: center;
 
     background-color: #22262A;
 }
 
+#main-container {
+    align-items: center;
+}
+
 #main-container main {
+    padding: 0 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -227,7 +281,7 @@ footer * {
     position: fixed;
     right: 0;
 
-    z-index: 2;
+    z-index: 10;
 }
 
 .hamburger-button-container:hover {
@@ -328,9 +382,13 @@ footer * {
 
 .middle-nav-container--active {
     height: 100%;
+
+    z-index: 9;
 }
 
 .middle-nav {
+    width: 60rem;
+
     margin: auto;
 
     display: flex;
@@ -339,7 +397,7 @@ footer * {
 }
 
 .middle-nav a {
-    padding: 1.5rem 14rem;
+    padding: 1.5rem 0;
     position: relative;
 
     color: white;
@@ -367,9 +425,494 @@ footer * {
    transform: scaleX(1);
 }
 
+/* PROJECTS.PHP */
+
+#main-projects > h2,
+#main-projects > p {
+    animation: projects-top .5s ease forwards;
+}
+
+@keyframes projects-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.individual-project {
+    opacity: 0;
+}
+
+.projects__row .individual-project:first-child,
+.projects > h3 {
+    animation: projects-left .4s ease forwards .5s;
+}
+
+@keyframes projects-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+.projects__row .individual-project:nth-child(2) {
+    animation: projects-right .4s ease forwards .5s;
+}
+
+@keyframes projects-right {
+    0% {
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+.projects > h3 {
+    margin-bottom: .5rem;
+
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    opacity: 0;
+}
+
+.projects > h3:first-child {
+    margin-top: 2rem;
+}
+
+#main-container-projects main {
+    padding: 7rem 4rem;
+}
+
+#main-container-projects main > h2 {
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 2.5rem;
+
+    letter-spacing: .1rem;
+}
+
+#main-container-projects main p {
+    font-family: "Inconsolata", sans-serif;
+    color: #94a4b4;
+}
+
+.projects__row {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.projects__row .individual-project:first-child {
+    margin-right: 2rem;
+}
+
+.individual-project {
+    width: 30rem;
+
+    position: relative;
+    overflow: hidden;
+
+    display: inline-block;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.75);
+}
+
+.api {
+    position: relative;
+    width: 100%;
+    padding-top: 59.3%;
+    
+    color: gray;
+}
+
+.single-api {
+    position: relative;
+    width: 30rem;
+
+    padding-top: 59.3%;
+}
+
+.api h1 {
+    transition: .3s ease;
+    transform: scale(1);
+}
+
+.api h1, .single-api h1 {
+    padding: 0 1rem;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 40%;
+
+    text-align: center;
+    color: gray;
+}
+
+.individual-project img {
+    width: 30rem;
+
+    transition: .3s ease;
+}
+
+.individual-project:hover #button-container {
+    display: flex;
+}   
+
+.individual-project:hover .img-back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-image: radial-gradient(transparent,rgba(0,0,0,.5));
+}
+
+.individual-project:hover img, 
+.individual-project:hover .api h1 {
+    transform: scale(1.05);
+}
+
+#button-container {
+    width: 100%;
+    
+    position: absolute;
+    bottom: 1rem;
+
+    display: none;
+    justify-content: center;
+}
+
+.individual-project button {
+    padding: .3rem 1rem;
+
+    font-size: 1.1rem;
+    font-family: "Staatliches" ,sans-serif;
+
+    background-color: #D1D1D1;
+
+    border-radius: .2rem;
+    border: 1px solid transparent;
+    letter-spacing: .07rem;
+    z-index: 2;
+
+    transition: background-color .3s ease;
+}
+
+#button-container button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+.individual-project i {
+    margin-right: .4rem;
+}
+
+.single-container-animetorrents,
+.single-container-portfolio,
+.single-container-userApi {
+    height: 100vh;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    place-content: center;
+
+    background-color: rgba(0,0,0,.3);
+    z-index: 2;
+
+    transition: .3s ease-in;
+    opacity: 0;
+    visibility: collapse;
+}
+
+.single-container-animetorrents--active,
+.single-container-porfolio--active,
+.single-container-userApi--active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.single-project  {
+    display: flex;
+
+    background-color: #343a41;
+    box-shadow: 0 0 5px #000;
+    	
+    transition: opacity 300ms ease-out;
+    opacity: 0;
+    transform: scale(1); 
+}
+
+
+.single-container-animetorrents--active .single-project,
+.single-container-porfolio--active .single-project,
+.single-container-userApi--active .single-project {
+    opacity: 1;
+
+    animation: scale-single 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scale-single {
+    0% {
+        transform: scale(0);
+    }
+    
+    100% {
+        transform: scale(1);
+    }
+}
+
+.single-project img {
+    width: 55rem;
+}
+
+.single-project__info {
+    width: 25rem;
+
+    padding: 1rem;
+
+    position: relative;
+}
+
+.info {
+    width: 100%;
+    color: #94a4b4;
+}
+
+.info .fa-times {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    font-size: 2rem;
+    color: #94A4B4;
+
+    transition: all .2s ease;
+}
+
+.info .fa-times:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.info__description {
+    margin: 1.3rem 0 1rem;
+}
+
+.info h3, .info__description{
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: .1rem;
+    color: #94a4b4;
+}
+
+.info h2 {
+    margin-bottom: .3rem;
+
+    font-size: 2rem;
+    font-weight: 100;
+    color: white;
+}
+
+.info span {
+    padding: .2rem .4rem;
+    margin: .2rem;
+
+    display: inline-block;
+    border: .01rem solid #22262a;
+    letter-spacing: .04rem;
+}
+
+.info p {
+    font-size: 1rem;
+    line-height: 1.3;
+
+    max-height: 17rem;
+    overflow-y: scroll;
+    white-space: pre-line;
+}
+
+p::-webkit-scrollbar-thumb {
+    background-color: #97BFD3;
+    border-radius: .6rem;
+}
+
+.info__btn {
+    padding: .3rem .7rem;
+    margin-top: 1rem;
+
+    display: inline-block;
+    
+    color: black;
+    background-color: #D6D8D9;
+    border-radius: .2rem;
+}
+
+.info__btn:hover {
+    background-color: white;
+}
+
 @media only screen and (min-width: 2400px)
 {
     html {
-        font-size: 60px;
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1440px)
+{
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1300px)
+{
+    .single-project img {
+        width: 40rem;
+    }
+    
+    .single-api {
+        width: 40rem;
+    }
+
+    .info p {
+        max-height: 10rem;
+    }
+    
+}
+
+@media only screen and (max-width: 1110px)
+{   
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .individual-project, 
+    .individual-project img {
+        width: 25rem;
+    }
+}
+
+@media only screen and (max-width: 937px) {
+    .single-project {
+        flex-direction: column;
+    }
+
+    .api {
+        width: unset;
+    }
+
+    .single-project__info {
+        width: 40rem;
+    }
+
+    .middle-nav {
+        width: 80%;
+    }
+
+    .middle-nav a {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .individual-project, 
+    .individual-project img {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .individual-project, 
+    .individual-project img {
+        width: 15rem;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    html {
+        font-size: 10px;
+    }
+
+    .projects__row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .individual-project {
+        margin-right: 0 !important;
+        margin-bottom: 2rem;
+    }
+
+    .individual-project, 
+    .individual-project img {
+        width: 25rem;
+    }
+}
+
+@media only screen and (max-width: 545px) {
+    .individual-project, .individual-project img {
+        width: 23rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .individual-project, 
+    .individual-project img {
+        width: 25rem;
+    }
+
+    .single-project img, 
+    .single-project__info {
+        width: 33rem;
+    }
+
+    .single-api {
+        width: 33rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .individual-project, 
+    .individual-project img {
+        width: 25rem;
+    }
+}
+
+@media only screen and (max-width: 343px) {
+    .single-project img, 
+    .single-project__info {
+        width: 30rem;
+    }
+
+    .single-api {
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .individual-project, .individual-project img {
+        width: 20rem;
     }
 }

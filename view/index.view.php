@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
     
+    <link rel="manifest" href="imgs/site.webmanifest">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
     <title>Nahuel Fernandez | Portafolio</title>
@@ -19,7 +22,13 @@
 <body>
     <div class="wrap">
         <div id="main-container">
-            <main> 
+            <a class="logo" href="./">
+                <span class="logo--blue">N</span>
+                <span class="logo-f-container">
+                    <span class="logo--white">F</span>
+                </span>
+            </a>
+            <main class="main-about"> 
                 <div class="about">
                     <h1 id="my-name">
                         <span>Nahuel</span>
@@ -110,7 +119,7 @@
                         <div class="inline-word-container">
                             <span class="inline-word">
                                 <div>projectos</div>
-                                <div class="inline-word__bottom">projectos</div>
+                                <div class="inline-word__bottom">proyectos</div>
                             </span>
                         </div>
                         <div class="inline-word-container">
@@ -139,7 +148,7 @@
                         </div>
                     </div>
                 </div>
-                <a id="project-button-container" href="#">
+                <a id="project-button-container" href="projects">
                     <div class="project-button">
                         <button class="project-button__top">VER PROYECTOS</button>
                         <button class="project-button__bottom">VER PROYECTOS</button>
@@ -184,7 +193,7 @@
     <div class="middle-nav-container">
         <div class="middle-nav">
             <a href="./">Inicio</a>
-            <a href="#">Proyectos</a>
+            <a href="projects">Proyectos</a>
         </div>
     </div>
 </body>
