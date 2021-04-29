@@ -5,6 +5,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^.]+)$ $1.php [L]
 
+# Redirect http to https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://nahuefer.com/ [R,L]
+
 # If file does not exist redirect to error.php
 RewriteCond %{ENV:REDIRECT_STATUS} ""
 RewriteCond %{REQUEST_FILENAME} !-d
